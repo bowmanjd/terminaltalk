@@ -3,6 +3,7 @@ bat
 eza
 ripgrep
 fd
+ffmpeg
 ImageMagick
 ssh
 ffmpeg
