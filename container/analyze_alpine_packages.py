@@ -6,7 +6,6 @@ and lists all explicitly installed packages by size in descending order.
 """
 
 import subprocess
-import json
 import os
 import sys
 from operator import itemgetter
@@ -27,17 +26,18 @@ def build_container():
 def get_installed_packages(container_name):
     """Get list of explicitly installed packages in the container."""
     print("Getting explicitly installed packages...")
-    result = subprocess.run(
-        [
-            "docker", "run", "--rm", container_name,
-            "sh", "-c", "apk info -a | grep -A1 'installed size:' | paste - - | sort -k5,5nr"
-        ],
-        capture_output=True,
-        text=True
-    )
-    
-    if result.returncode != 0:
-        print(f"Error getting package info: {result.stderr}")
+    try:
+        result = subprocess.run(
+            [
+                "docker", "run", "--rm", container_name,
+                "sh", "-c", "apk info -a | grep -A1 'installed size:' | paste - - | sort -k5,5nr"
+            ],
+            capture_output=True,
+            text=True,
+            check=True
+        )
+    except subprocess.CalledProcessError as e:
+        print(f"Error getting package info: {e.stderr}")
         sys.exit(1)
         
     packages = []
@@ -45,11 +45,16 @@ def get_installed_packages(container_name):
         if not line.strip():
             continue
         
-        parts = line.split()
-        if len(parts) >= 6 and parts[3] == "size:":
-            package_name = parts[0]
-            size_value = float(parts[4])
-            size_unit = parts[5]
+        try:
+            parts = line.split()
+            if len(parts) >= 6 and parts[3] == "size:":
+                package_name = parts[0]
+                try:
+                    size_value = float(parts[4])
+                    size_unit = parts[5]
+                except (ValueError, IndexError):
+                    print(f"Warning: Could not parse size for package {package_name}, skipping")
+                    continue
             
             # Convert to KB for consistent comparison
             if size_unit == "MiB":
