@@ -3,11 +3,16 @@
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
+    zeitfetch-src = {
+      url = "github:nidnogg/zeitfetch";
+      flake = false;
+    };
   };
 
   outputs = {
     self,
     nixpkgs,
+    zeitfetch-src,
   }: let
     system = "x86_64-linux";
     pkgs = import nixpkgs {
@@ -16,69 +21,127 @@
         allowUnfree = true;
       };
     };
+
+    zeitfetch = pkgs.rustPlatform.buildRustPackage {
+      pname = "zeitfetch";
+      version = "0.1.14"; # Update with actual version if known
+      src = zeitfetch-src;
+
+      cargoLock = {
+        lockFile = "${zeitfetch-src}/Cargo.lock";
+        outputHashes = {}; # You might need to add the actual hashes if needed
+      };
+
+      meta = with pkgs.lib; {
+        description = "A minimal fetch program written in Rust";
+        homepage = "https://github.com/nidnogg/zeitfetch";
+        license = licenses.mit; # Update with the actual license if different
+      };
+    };
+
     # Define the package list once to be used in multiple places
     terminalPackages = with pkgs; [
-      tetris
-      figlet
-      pipes-rs
-      sl
-      asciiquarium
       # aider-chat
-      bashInteractive
+      # bashInteractive
+      # fastfetch
+      # ffmpeg-headless
+      # gitMinimal
+      # goose-cli
+      # htop
+      # neofetch
+      # tldr
+      # vhs
+      asciiquarium
       bat
-      # bsdgames
+      bottom
       btop
+      busybox
+      cacert
+      cht-sh
       dotacat
+      dust
       eza
       fd
-      gitMinimal
-      # goose-cli
-      htop
-      imagemagick
-      inetutils
-      ffmpeg
-      ncdu
-      neofetch
+      fzf
+      figlet
+      imagemagick_light
+      micro
+      miller
+      # ncdu
       nnn
+      open-adventure
       openssh
+      pipes-rs
+      # procs
+      qrencode
       ripgrep
-      tldr
-      # vhs
+      sl
+      # tealdeer
+      tlrc
+      # tmux
+      # tokei
+      tetris
+      # visidata
+      zeitfetch
+      # zellij
+      zoxide
     ];
   in {
     packages.${system} = {
       default = self.packages.${system}.docker-image;
 
-      docker-image = pkgs.dockerTools.buildImage {
+      docker-image = pkgs.dockerTools.streamLayeredImage {
         name = "cposc-terminal";
         tag = "latest";
 
-        copyToRoot = pkgs.buildEnv {
-          name = "image-root";
-          paths = terminalPackages;
-          pathsToLink = ["/bin"];
-        };
+        contents = terminalPackages;
 
         config = {
-          Cmd = ["/bin/bash"];
+          Cmd = ["/bin/sh"];
           WorkingDir = "/";
+          env = ["GC_DONT_GC=1"];
         };
       };
 
-      analyze-image-size = pkgs.runCommand "analyze-image-size" {
-        buildInputs = [ pkgs.python3 ];
-        # Read the Python script content
-        pythonScript = builtins.readFile ./analyze_image_size.py;
-      } ''
-        mkdir -p $out/bin
-        cat > $out/bin/analyze-image-size << EOF
-        ${builtins.replaceStrings 
-          ["__IMAGE_PATH__" "__PACKAGES__"] 
-          ["${self.packages.${system}.docker-image}" 
-           "${builtins.toJSON (map toString terminalPackages)}"]
-          "$pythonScript"}
-        EOF
-        chmod +x $out/bin/analyze-image-size
+      docker-load = pkgs.writeShellScriptBin "docker-load" ''
+        set -euo pipefail
+
+        IMAGE_NAME="cposc-terminal"
+        IMAGE_TAG="latest"
+        FULL_IMAGE_NAME="$IMAGE_NAME:$IMAGE_TAG"
+
+        echo "Removing existing Docker image if it exists..."
+        if docker image inspect "$FULL_IMAGE_NAME" &>/dev/null; then
+          docker rmi "$FULL_IMAGE_NAME" || echo "Warning: Failed to remove existing image"
+        fi
+
+        echo "Building and loading Docker image directly..."
+        # streamLayeredImage outputs the image when executed, pipe directly to docker load
+        image_path=$(nix build .#docker-image --print-out-paths --no-link)
+
+        "$image_path" | docker load
+
+        if [ $? -eq 0 ]; then
+          echo "Image loaded successfully!"
+          echo "You can now use: docker run -it $FULL_IMAGE_NAME"
+        else
+          echo "Failed to load the Docker image"
+          exit 1
+        fi
+      '';
+
+      analyze-image-size = let
+        pythonEnv = pkgs.python3.withPackages (ps: with ps; [humanfriendly]);
+        scriptPath = toString ./analyze_image_size.py;
+      in
+        pkgs.writeShellScriptBin "analyze-image-size" ''
+          ${pythonEnv}/bin/python ${scriptPath} \
+            ${self.packages.${system}.docker-image} \
+            ${builtins.concatStringsSep " " (map toString terminalPackages)}
+        '';
+
+      analyze-deps = pkgs.writeShellScriptBin "analyze-deps" ''
+        nix path-info -rsSh $(nix-build -A packages.${system}.docker-image)
       '';
 
       # Add a publish script for Docker Hub
@@ -96,7 +159,6 @@
         docker tag cposc-terminal:latest ghcr.io/''${GITHUB_USERNAME:-yourusername}/cposc-terminal:latest
         docker push ghcr.io/''${GITHUB_USERNAME:-yourusername}/cposc-terminal:latest
       '';
-
     };
   };
 }

@@ -1,3 +1,18 @@
+https://github.com/alebcay/awesome-shell
+https://github.com/agarrharr/awesome-cli-apps
+
+# Why
+
+# Basics
+
+cd
+ls
+cat
+pagers: less, more
+editors: vi, micro
+cheat.sh
+tldr
+
 # Tools
 bat
 eza

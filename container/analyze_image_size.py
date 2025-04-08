@@ -1,53 +1,45 @@
 #!/usr/bin/env python3
+import json
 import os
 import subprocess
 import sys
 
+from humanfriendly import format_size
+import struct
 
-def get_nix_path_info(path, human_readable=False):
-    cmd = ["nix", "path-info"]
-    if human_readable:
-        cmd.extend(["-S", "-h"])
-    else:
-        cmd.append("--size")
+def get_nix_path_info(path):
+    cmd = ["nix", "path-info", "-S", "--json"]
     cmd.append(path)
     result = subprocess.run(cmd, capture_output=True, text=True)
-    return result.stdout.strip()
+    return json.loads(result.stdout.strip())
 
 
-def main(image_path, packages):
-    # Get container image size
-    print("Analyzing size of container image...")
-    print(get_nix_path_info(image_path, human_readable=True))
-    print()
+def get_nix_closure_size(path):
+    info = get_nix_path_info(path)
+    size = info[path]["closureSize"]
+    return {"path": path, "size": size, "readable": format_size(size)}
 
-    # Get size of each package
-    print("Breaking down container image size by package (sorted by size):")
-    print("-------------------------------------------------------------")
 
-    # Get sizes and names of packages
-    package_info = []
-    for pkg in packages:
-        size_bytes = int(get_nix_path_info(pkg))
-        name = os.path.basename(pkg)
-        package_info.append((size_bytes, name, pkg))
+def get_package_sizes(image_path, packages):
+    print(f"Container image: {image_path}")
+    print(f"Container image size: {get_nix_closure_size(image_path)['readable']}")
 
-    # Sort by size in descending order
-    package_info.sort(reverse=True)
+    pkg_list = sorted(
+        [get_nix_closure_size(pkg) for pkg in packages],
+        key=lambda x: x["size"],
+        reverse=True,
+    )
 
-    # Print sorted results with human-readable sizes
-    for size_bytes, name, pkg in package_info:
-        human_size = get_nix_path_info(pkg, human_readable=True).split()[-1]
-        print(f"{name}: {human_size}")
+    for pkg in pkg_list:
+        print(f"{pkg['path']}: {pkg['readable']}")
+
 
 if __name__ == "__main__":
-    import json
-    
-    # These placeholders will be replaced by the Nix build
-    image_path = '__IMAGE_PATH__'
-    packages_json = '__PACKAGES__'
-    
-    # Parse the JSON string back to a list
-    packages = json.loads(packages_json)
-    
-    main(image_path, packages)
+    # In the actual execution, these will be passed from the flake
+    if len(sys.argv) < 3:
+        print("Usage: analyze_image_size.py <image_path> <package1> [package2] ...")
+        sys.exit(1)
+
+    image_path = sys.argv[1]
+    packages = sys.argv[2:]
+    get_package_sizes(image_path, packages)
