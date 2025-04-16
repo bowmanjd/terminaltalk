@@ -29,7 +29,7 @@ hideInToc: true
 <!--
 It is an honor to be here. I am Jonathan Bowman. I am a hobbyist developer. I have been a teacher, preacher, web developer, IT director, software project manager, and now I write SQL, Javascript, and C# all day at Cargas. Cargas is the most humane and thoughtful place I have ever worked with technology, and I am proud to be there. There are other things I am proud of. I use Vim, I like Linux, I am pretty good with Python and bash and Powershell, and even a little Rust.
 
-Whether Linux, Windows, or Mac, or BSD, I do feel pretty comfortable on the command-line.
+Whether Linux, Windows, or Mac, or BSD, I do feel pretty comfortable on the command-line. And I hope that this time together today might encourage you to be a bit more comfortable on the command line, and find ways it can support, or entertain, you.
 -->
 
 ---
@@ -94,22 +94,26 @@ transitive verb
 ```
 ````
 
+<!--
+
+Let's do a little bit of word play. There is console the noun and console the verb, as seen in this excerpt from Merriam-Webster. Console (noun) is used to control or support a system. Console (verb) means to comfort. Let's try to bring those two together today.
+
+-->
+
 ---
 layout: image-right
 image: /console-bracket.jpg
 backgroundSize: contain
 ---
 
+## Alleviate the Load
+
 <!--
 
-- console and console (v) come from the same root in French, so console (n) is something that alleviates the load (wikitionary)
+- console and console (v) come from the same root in French, so console (n) is something that alleviates the load (wiktionary)
 - Here is a console bracket, designed to alleviate the load
 
 -->
-
-## Alleviate the Load
-
----
 
 ---
 layout: two-cols
@@ -121,5 +125,11 @@ layout: two-cols
 ::right::
 
 ![terminal](/terminal.svg)
+
+---
+layout: image
+image: /sixel.gif
+backgroundSize: contain
+---
 
 ---
