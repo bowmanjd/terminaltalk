@@ -2,9 +2,10 @@
 name = "terminaltalk"
 pages_build_output_dir = "dist"
 compatibility_date = "2024-05-05"
+base_dir = "/slides"
 
 [vars]
-NODE_VERSION = "20"
+NODE_VERSION = "22"
 
 [env.production.vars]
-NODE_VERSION = "20"
+NODE_VERSION = "22"
