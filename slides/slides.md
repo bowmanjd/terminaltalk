@@ -61,6 +61,12 @@ This is the link to this slide deck as well as a few links my online presences. 
 
 ![dmesg output](/dmesg.gif)
 
+<!--
+
+The stereotype of the command-line is that it is inhospitable
+
+-->
+
 ---
 
 ````md magic-move

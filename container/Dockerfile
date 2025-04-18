@@ -46,7 +46,7 @@ FROM alpine:edge
 
 # Copy artifacts from c-builder stage
 COPY --from=c-builder /usr/local/bin/qrencode /usr/bin/
-COPY --from=c-builder /usr/local/lib/libqrencode.so* /usr/lib/
+# COPY --from=c-builder /usr/local/lib/libqrencode.so* /usr/lib/
 COPY --from=c-builder /tmp/bocfel/bocfel /usr/bin/
 
 # Copy artifacts from rust builder stage
@@ -80,9 +80,6 @@ RUN apk update && apk upgrade && \
     wget -O /root/zork1.z3 https://eblong.com/infocom/gamefiles/zork1-r119-s880429.z3 && \
     wget -O /root/gourmet.zblorb https://ifarchive.org/if-archive/games/zcode/gourmet.zblorb && \
     rm -rf /var/cache/apk/*
-
-# Set up necessary library paths
-RUN 
 
 ENV COLORTERM=truecolor
 # Set a default command (can be overridden)
