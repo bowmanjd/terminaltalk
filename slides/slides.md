@@ -133,6 +133,15 @@ layout: two-cols
 ![terminal](/terminal.svg)
 
 ---
+
+Does your terminal support sixel? Some options:
+
+- WezTerm, Visual Studio Code, Warp
+- iTerm2 and MacTerm
+- Windows Terminal Preview
+- xterm, konsole, foot, xfce-terminal, contour
+
+---
 layout: image
 image: /sixel.gif
 backgroundSize: contain
