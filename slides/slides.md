@@ -138,4 +138,6 @@ image: /sixel.gif
 backgroundSize: contain
 ---
 
+Does your terminal support sixel?
+
 ---
