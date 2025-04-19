@@ -1,6 +1,6 @@
 # Terminal Talk at CPOSC
 
-by Jonathan Bowman
+## by Jonathan Bowman
 
 To start the slide show:
 
