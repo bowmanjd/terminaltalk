@@ -10,7 +10,7 @@ info: |
 highlighter: shiki
 selectable: true
 presenter: dev
-download: true
+download: false
 drawings:
   presenterOnly: true
   persist: false
