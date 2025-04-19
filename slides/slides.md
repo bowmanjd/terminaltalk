@@ -68,6 +68,21 @@ The stereotype of the command-line is that it is inhospitable
 -->
 
 ---
+layout: image-right
+image: /console-bracket.jpg
+backgroundSize: contain
+---
+
+## Alleviate the Load
+
+<!--
+
+- console and console (v) come from the same root in French, so console (n) is something that alleviates the load (wiktionary)
+- Here is a console bracket, designed to alleviate the load
+
+-->
+
+---
 
 ````md magic-move
 ```text
@@ -103,21 +118,6 @@ transitive verb
 <!--
 
 Let's do a little bit of word play. There is console the noun and console the verb, as seen in this excerpt from Merriam-Webster. Console (noun) is used to control or support a system. Console (verb) means to comfort. Let's try to bring those two together today.
-
--->
-
----
-layout: image-right
-image: /console-bracket.jpg
-backgroundSize: contain
----
-
-## Alleviate the Load
-
-<!--
-
-- console and console (v) come from the same root in French, so console (n) is something that alleviates the load (wiktionary)
-- Here is a console bracket, designed to alleviate the load
 
 -->
 

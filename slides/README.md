@@ -1,4 +1,4 @@
-# Welcome to [Slidev](https://github.com/slidevjs/slidev)!
+# Terminal Talk at CPOSC
 
 To start the slide show:
 
