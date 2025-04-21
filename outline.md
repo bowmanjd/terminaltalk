@@ -52,6 +52,13 @@ Example: ls
 One way to make it fun is to replace with something prettier, more features: eza or lsd
 Another way is to install sl to help you laugh at yourself, and maybe improve your typing (won't work on windows)
 
+fun
+personal
+humorous
+good-looking
+helpful
+
+
 
 
  

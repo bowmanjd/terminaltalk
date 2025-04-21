@@ -1,59 +1,73 @@
-# Dotacat and BSDGames Docker Container Flake
+# Terminal Talk at CPOSC 2025
 
-This Nix flake builds a Docker container with [dotacat](https://github.com/nekowinston/dotacat) and [bsdgames](https://wiki.linuxquestions.org/wiki/BSD_games) pre-installed.
+This container image contains a variety of tools and toys for the command line.
 
-## Requirements
+Press space to page through this introduction, or q to exit.
 
-- [Nix](https://nixos.org/) with flakes enabled
-- Docker (if you want to run the container)
+To exit the container entirely, from the prompt type ctrl-d or exit.
 
-## Building the Docker image
+## Navigating
 
-To build the Docker image, run:
+To get around, try these commands:
 
-```bash
-nix build
-```
+- `pwd` will *p*rint the *w*orking *d*irectory
+- `cd /root` will *c*hange the *d*irectory to `/root`
+- `cd /usr/bin` will change the directory to `/usr/bin`
+- `ls` will list the contents of the directory you are in
+- `cat /etc/os-release` will display the file at /etc/os-release
+- `fd adventure /` will search `/` (top-level directory) for any file with "adventure" in the filename and print the path
+- `rg cposc /root` will search `/root` for files that include "cposc"
+- `ctrl-d` (your ctrl key plus the `d` key) or `exit` will exit the container
 
-This will create a `result` symlink to the Docker image tarball.
+## Games
 
-## Loading the Docker image
+(Usually q or ctrl-c will exit)
 
-To load the image into Docker, run:
+- `tetris`
+- `bocfel /root/gourmet.zblorb`
+- `bocfel /root/zork.z3`
+- `ttyper`
+- `ttysolitaire -no-background-color`
 
-```bash
-docker load < result
-```
+### From the BSD games collection
 
-## Running the container
+- `adventure`
+- `arithmetic`
+- `battlestar`
+- `dab`
+- `gofish`
+- `gomoku`
+- `hangman`
+- `klondike`
+- `robots`
+- `snake`
+- `spirhunt`
+- `worm`
+- `wump`
 
-After loading the image, you can run the container with:
+## Fun and/or pretty:
+- `sl`
+- `dotacat /root/README.md`
+- `python -m rich`
+- `asciiquarium`
+- `figlet hello`
+- `ssh -p 2222 guest@telehack.com`
 
-```bash
-docker run -it dotacat-bsdgames:latest
-```
+## Help
 
-## Available games
+- `tldr`
+- `curl cheat.sh`
 
-Once inside the container, you can run:
+## Utilities
 
-- `dotacat` - A pretty cat alternative
-- Various BSD games like `adventure`, `battlestar`, `tetris-bsd`, etc.
+- `btm` shows memory/cpu utilization
+- `fastfetch` shows system information
+- `dust` shows filesystem utilization
+- `micro` is an easy-to-use editor
+- `vi` is a classic two-mode editor (":q enter" to quit)
+- `ffmpeg`
+- `fzf`
+- `imagemagick`
+- `miller`
 
-## Publishing the Image
-
-This flake includes scripts to help publish the Docker image to registries:
-
-```bash
-# Publish to Docker Hub (sets username from env var or uses default)
-DOCKER_USERNAME=yourusername nix run .#publish-to-dockerhub
-
-# Publish to GitHub Container Registry 
-GITHUB_USERNAME=yourusername nix run .#publish-to-ghcr
-```
-
-For more detailed publishing instructions, see the [PUBLISHING.md](PUBLISHING.md) file.
-
-## Customizing the flake
-
-You can modify the `flake.nix` file to add or remove packages as needed.
+Press "b" or space to move forward and backward through this introduction, or q to exit.

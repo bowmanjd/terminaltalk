@@ -122,6 +122,18 @@ Let's do a little bit of word play. There is console the noun and console the ve
 -->
 
 ---
+
+The command line can be:
+
+- fun
+- personal
+- humorous
+- good-looking
+- helpful
+
+<!-- And now we are all wondering if the command line may in fact be a pleasant date. Indeed, my hope for you is that if you give it a chance you will find it downright companionable, a partner you would miss if you ever parted. -->
+
+---
 layout: two-cols
 ---
 
@@ -131,6 +143,70 @@ layout: two-cols
 ::right::
 
 ![terminal](/terminal.svg)
+
+<!--
+Yet another word association -- the command-line console can also be a bit of a game console.
+-->
+
+---
+
+<SlidevVideo v-click autoplay autoreset='click'>
+  <source src="/tetris.webm" type="video/webm" />
+</SlidevVideo>
+
+<!-- 
+For instance, you can actually play games... Tetris is a great fit for the terminal.
+-->
+
+---
+
+<SlidevVideo v-click autoplay autoreset='click'>
+  <source src="/ttyper.webm" type="video/webm" />
+</SlidevVideo>
+
+<!-- 
+Typing tutors suit the terminal well. This one is called "ttyper".
+-->
+
+---
+
+<SlidevVideo v-click autoplay autoreset='click'>
+  <source src="/solitaire.webm" type="video/webm" />
+</SlidevVideo>
+
+<!-- Solitaire! I will admit I am not yet convinced this is a perfect fit for the terminal. Honestly, using a physical card deck might appeal to me more. -->
+
+---
+
+<SlidevVideo v-click autoplay autoreset='click'>
+  <source src="/adventure.webm" type="video/webm" />
+</SlidevVideo>
+
+<!-- One type of game I love playing in the terminal is what used to be called text adventure games, and are now more often called interactive fiction. Here is the first one, created around 1975. You can play it today, still, and it is worth a few hours of fun, at least. -->
+
+---
+
+![zork](/zork.png)
+
+<!-- Zork is another classic, from a couple years later. Zork 1, 2, and 3 are all publicly available now. -->
+
+---
+
+![gourmet](/gourmet.png)
+
+<!-- But don't be deceived, this is a contemporary genre as well, with competitions and festivals. One of my favorite interactive fiction pieces is fairly short -- you can likely finish it an hour or two, and it is called Gourmet. It is also an excellent example of interactive fiction that is not the old dungeons or fantasy style. It takes place in a restaurant. And the primary conflict revolves around a very troublesome lobster. -->
+
+---
+
+# Interactive Fiction
+
+- You likely need a "Z-machine interpreter" like Frotz
+- [Beginner Resources](http://brasslantern.org/beginners/)
+- [The Interactive Fiction Community Forum](https://intfiction.org/)
+- [The Interactive Fiction Wiki](https://ifwiki.org/)
+- [Interactive Fiction Database](https://ifdb.org/)
+- [Planet Interactive Fiction](https://planet-if.com/)
+- [The Interactive Fiction Archive](https://www.ifarchive.org/)
 
 ---
 
