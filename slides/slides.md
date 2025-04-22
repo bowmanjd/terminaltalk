@@ -150,6 +150,39 @@ Yet another word association -- the command-line console can also be a bit of a 
 
 ---
 
+# Pick your terminal (what you already have is good)
+
+- [WezTerm](https://wezterm.org/)
+- Mac: [iTerm2](https://iterm2.com/) or Terminal
+- Windows Terminal
+- Linux: [Konsole](https://konsole.kde.org/) or [Gnome Terminal](https://help.gnome.org/users/gnome-terminal/stable/) (I love [foot](https://codeberg.org/dnkl/foot))
+- ChromeOS: [enable Linux](https://chromeos.dev/en/productivity/terminal)
+- Also great: [Kitty](https://sw.kovidgoyal.net/kitty/), [Alacritty](https://alacritty.org/), [Ghostty](https://ghostty.org/)
+- Android: [Termux](https://termux.dev)
+- iOS: [a-shell](https://apps.apple.com/us/app/a-shell/id1473805438) or [iSH](https://apps.apple.com/us/app/ish-shell/id1436902243) or use an SSH app (such as [Termius](https://www.apple.com/us/search/termius)) and connect to a server
+
+---
+
+# Choose your package manager(s)
+
+- Mac: [brew.sh](https://brew.sh) then `brew install qrencode`
+- Windows: [scoop.sh](https://scoop.sh) then `scoop install qrencode` ([chocolatey](https://chocolatey.org/) or [winget](https://learn.microsoft.com/en-us/windows/package-manager/) may also have the desired tools and toys)
+- Linux: 
+	* Debian/Ubuntu: `apt install qrencode`
+	* Fedora: `dnf install qrencode`
+- Determinate/functional hipsters: [nix package manager](https://nixos.org/)
+
+---
+
+# Companion container
+
+`docker run -it ghcr.io/bowmanjd/alpine-cposc`
+
+- Linux: install podman or docker with your package manager
+- Mac or Windows: [Rancher Desktop](https://rancherdesktop.io/) or [Podman](https://podman.io/docs/installation)
+
+---
+
 <SlidevVideo v-click autoplay autoreset='click'>
   <source src="/tetris.webm" type="video/webm" />
 </SlidevVideo>
