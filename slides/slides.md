@@ -194,7 +194,7 @@ Typing tutors suit the terminal well. This one is called "ttyper".
 
 ![gourmet](/gourmet.png)
 
-<!-- But don't be deceived, this is a contemporary genre as well, with competitions and festivals. One of my favorite interactive fiction pieces is fairly short -- you can likely finish it an hour or two, and it is called Gourmet. It is also an excellent example of interactive fiction that is not the old dungeons or fantasy style. It takes place in a restaurant. And the primary conflict revolves around a very troublesome lobster. -->
+<!-- But don't be deceived, this is a contemporary genre as well, with new authors and competitions and festivals. One of my favorite interactive fiction pieces is fairly short -- you can likely finish it an hour or two, and it is called Gourmet. It is also an excellent example of interactive fiction that is not the old dungeons or fantasy style. It takes place in a restaurant. And the primary conflict revolves around a very troublesome lobster. -->
 
 ---
 
@@ -224,5 +224,12 @@ backgroundSize: contain
 ---
 
 Does your terminal support sixel?
+
+---
+
+# Discussion
+
+- A command I really like is _____
+- Is there a command for this thing I want to do: __________?
 
 ---
