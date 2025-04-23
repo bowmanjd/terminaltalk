@@ -161,6 +161,12 @@ Yet another word association -- the command-line console can also be a bit of a 
 - Android: [Termux](https://termux.dev)
 - iOS: [a-shell](https://apps.apple.com/us/app/a-shell/id1473805438) or [iSH](https://apps.apple.com/us/app/ish-shell/id1436902243) or use an SSH app (such as [Termius](https://www.apple.com/us/search/termius)) and connect to a server
 
+<!--
+
+A brief detour just to help us get started. First you need a terminal.
+
+-->
+
 ---
 
 # Choose your package manager(s)
@@ -172,6 +178,20 @@ Yet another word association -- the command-line console can also be a bit of a 
 	* Fedora: `dnf install qrencode`
 - Determinate/functional hipsters: [nix package manager](https://nixos.org/)
 
+<!--
+Then we need an easy way to install toys. Depends on your operating system, but there are always some good options.
+-->
+
+---
+
+# Containers
+
+- docker
+- podman
+- nerdctl
+
+All of these run a mini Linux OS (or many!) and typically a container provides one tool or service. You do not need these to be successful on the command-line, but it does open up the possibilities.
+
 ---
 
 # Companion container
@@ -180,6 +200,20 @@ Yet another word association -- the command-line console can also be a bit of a 
 
 - Linux: install podman or docker with your package manager
 - Mac or Windows: [Rancher Desktop](https://rancherdesktop.io/) or [Podman](https://podman.io/docs/installation)
+
+<!--
+
+I did create a container that goes along with this presentation and includes most of the tools and games I mention here. Feel free to use it. If you are using podman, just use that in place of the word docker in this command.
+
+-->
+
+---
+layout: center
+---
+
+**Fun**{.biggie}
+
+<!-- Let's dive into fun things to do in the terminal -->
 
 ---
 
@@ -240,6 +274,136 @@ Typing tutors suit the terminal well. This one is called "ttyper".
 - [Interactive Fiction Database](https://ifdb.org/)
 - [Planet Interactive Fiction](https://planet-if.com/)
 - [The Interactive Fiction Archive](https://www.ifarchive.org/)
+
+---
+layout: center
+---
+
+**Personal**{.biggie}
+
+<!-- The console is personal -->
+
+---
+
+Command line applications are:
+
+- relatively easy to write
+- often open source
+- tend to favor configurability
+- forever trying to make your life "better"
+
+<!--
+
+By personal, I mostly mean you can use terminal apps to make your environment what you want. And most terminal apps are made to be malleable, to conform to your preferences.
+
+-->
+
+---
+
+# Shells
+
+- bash
+- zsh
+- Powershell
+- fish
+- nushell
+- xonsh
+- elvish
+- ash/dash
+
+<!--
+
+For instance, shells. These are the command interpreters. If you are starting out, I'd advise that you stick with Powershell on Windows, Bash on Linux, and Zsh on Mac. In other words, don't worry about it and use what is there. But you can certainly use any of those three on any operating system. Or you can be hip and use fish.
+
+-->
+
+---
+
+## Theming your shell
+
+- [ohmyzsh](https://ohmyz.sh/)
+- [ohmybash](https://ohmybash.nntoan.com/)
+- [ohmyposh](https://ohmyposh.dev)
+
+---
+
+## Custom prompts
+
+- Every shell comes with its own means of customizing the command prompt
+- I like to use [starship](https://starship.rs/) on bash, zsh, Powershell...
+
+<!-- I deeply respect ohmyzsh and the like, but find my desires are met by using starship everywhere -->
+
+---
+
+## Color themes
+
+- [catppuccin](https://catppuccin.com/)
+- [dracula](https://draculatheme.com/)
+- [nord](https://www.nordtheme.com/)
+- [Iceberg](https://cocopon.github.io/iceberg.vim/)
+- [One Half ½](https://github.com/sonph/onehalf)
+- [Rosé Pine](https://rosepinetheme.com/)
+- [Solarized](https://ethanschoonover.com/solarized/)
+- [Tokyo Night](https://github.com/tokyo-night/tokyo-night-vscode-theme)
+- [gruvbox](https://github.com/morhetz/gruvbox)
+
+---
+
+## Modernize/Customize/Personalize the tools themselves
+
+- `pwd` (**p**rint **w**orking directory)
+- `ls` ⇢ `eza` (**l**ist a directory)
+- `cd` ⇢ `z` from zoxide (**c**hange **d**irectory)
+- `cat` ⇢ `bat` (output and/or con**cat**enate files)
+- `find` ⇢ `fd` (search for filenames)
+- `grep` ⇢ `rg` (ripgrep; search for content within files)
+- `exit` does what it says (also try `ctrl-d`)
+
+<!--
+
+Now let's talk personalization as well as basic commands. A brief review of the essential commands: (read first 4). These work on bash, zsh and Powershell.
+
+These are old standbys, but there are modern alternatives you may want to experiment with, because of added functionality or just because they look prettier. eza, for instance, will put pretty icons in your directory listings. bat will color-code (that is, syntax highlight) and line number your output. zoxide is a little new for me, but has already replaced my cd command and allows me to navigate directories so much faster, because it remembers where I have been, and makes it easy to return to directories I use the most. fd and ripgrep are essential to me because they are cross-platform and uniform, and fast and feature-full.
+
+-->
+
+---
+
+## Aliases or Functions
+
+- `alias ls="eza"` (bash/zsh)
+- `Set-Alias -Name ls -Value eza` (Powershell)
+- `alias up="sudo apt update && sudo apt upgrade -y"` (bash/zsh)
+- `up () { sudo apt update && sudo apt upgrade -y; }` (bash/zsh)
+- `function up { scoop update -a @args }` (Powershell)
+
+To make permanent, put in `$HOME/.profile` and the like (see $profile in Powershell).
+
+<!--
+
+This brings us to aliasing. eza, for instance, can serve well as a drop-in replacement for ls. And sometimes there are long commands that you type so often, you want to replace them with something short and easy to remember. "-y" is already an alias of sorts for "yes, do it, I mean it for real this time"
+
+-->
+
+---
+layout: center
+---
+
+# Public Service Announcement 
+
+- slashes lean to the right
+- when in doubt, quote
+- when in serious doubt, single quote
+
+---
+
+## Write your own tools
+
+
+---
+
+## Even if you don't know how
 
 ---
 
