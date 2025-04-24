@@ -81,8 +81,10 @@ RUN apk update && apk upgrade && \
     fd \
     ffmpeg \
     figlet \
+    frotz \
     fzf \
     imagemagick \
+    jq \
     libpng \
     micro \
     micro-tetris \
@@ -93,20 +95,24 @@ RUN apk update && apk upgrade && \
     sl \
     tty-solitaire \
     zoxide && \
-    # ldconfig /usr/local/lib || true && \
-    wget -O /root/zork1.z3 https://eblong.com/infocom/gamefiles/zork1-r119-s880429.z3 && \
-    wget -O /root/gourmet.zblorb https://ifarchive.org/if-archive/games/zcode/gourmet.zblorb && \
-    mkdir -p /root/.ssh && \
-    echo '[telehack.com]:2222 ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIMYDtEuPGGD6Rj+MKP8dHmBS9NaFkq7IXRSuZqsQp6eO' > /root/.ssh/known_hosts && \
-    chmod 600 /root/.ssh/known_hosts && \
+    addgroup -S cposc && adduser -S -G cposc cposc && \
+    mkdir -p /home/cposc/.ssh && \
+    wget -O /home/cposc/zork1.z3 https://eblong.com/infocom/gamefiles/zork1-r119-s880429.z3 && \
+    wget -O /home/cposc/gourmet.zblorb https://ifarchive.org/if-archive/games/zcode/gourmet.zblorb && \
+    echo '[telehack.com]:2222 ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIMYDtEuPGGD6Rj+MKP8dHmBS9NaFkq7IXRSuZqsQp6eO' > /home/cposc/.ssh/known_hosts && \
+    chmod 600 /home/cposc/.ssh/known_hosts && \
     mkdir -p /usr/share/dict && \
     printf "apple\nbeach\ncloud\ndiamond\neagle\nforest\ngarden\nharbor\nisland\njungle\nkitchen\nlibrary\nmountain\nnature\nocean\npicnic\nquiet\nriver\nsunset\ntable\numbrella\nvillage\nwinter\nyellow\nzebra" > /usr/share/dict/words && \
     printf '#!/bin/sh\n\nalias ls="eza"\nalias cat="bat --paging=never"\neval "$(zoxide init posix --hook prompt --cmd cd)"\n' > /etc/profile.d/cposc.sh && \
     chmod +x /etc/profile.d/cposc.sh && \
+    chown -R cposc:cposc /home/cposc && \
     rm -rf /var/cache/apk/*
 
-COPY README.md /root/
+COPY README.md /home/cposc/
+
+USER cposc
+WORKDIR /home/cposc
 
 ENV COLORTERM=truecolor
 # Set a default command (can be overridden)
-CMD ["/bin/sh", "-c", "glow -p /root/README.md; sh"]
+CMD ["/bin/sh", "-c", "glow -p README.md; sh"]

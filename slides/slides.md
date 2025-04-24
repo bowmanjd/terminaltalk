@@ -394,25 +394,83 @@ layout: center
 
 - slashes lean to the right
 - when in doubt, quote
-- when in serious doubt, single quote
+- your nemesis: spaces in directory and file names
 
 ---
 
 ## Write your own tools
 
+- a script is simply putting multiple commands in file and running it
+- learn a new programming language by writing a command-line tool
 
 ---
 
-## Even if you don't know how
+## Robust libraries
+
+- Python: [textualize](https://www.textualize.io/) and [rich](https://rich.readthedocs.io/en/stable/introduction.html)
+- Go: [charm.sh](https://charm.sh/) including Huh?, Bubble Tea, Gum...
+- Javascript: [ink](https://term.ink/) or [terminal-kit](https://github.com/cronvel/terminal-kit) or [enquirer](https://github.com/enquirer/enquirer)
+- Rust: [ratatui](https://ratatui.rs/) or [iocraft](https://github.com/ccbrown/iocraft)
+- .NET: [Spectre.Console](https://spectreconsole.net/) or [Terminal.Gui](https://github.com/gui-cs/Terminal.Gui)
+- Either built-in or as a library, your language of choice will also have a variety of easy ways to parse command-line parameters and config files.
+ 
+---
+
+## Create tools even if you don't know how
+
+- Because of the simplicity and textual interface of CLI apps, LLMs can get it right most of the time
+- Use a language model known for good coding: Claude 3.5 or 3.7, Gemini 2.5 Pro, or OpenAI 4.1
+- Use a programming language in which LLMs excel: Python, for instance. But if you are already familiar with a language, use that one
+
+
+
+<!--
+text-based apps are great for LLMs and tool-calling, but LLMs also make great apps.
+-->
 
 ---
 
-Does your terminal support sixel? Some options:
+# An example single-shot prompt
 
-- WezTerm, Visual Studio Code, Warp
-- iTerm2 and MacTerm
-- Windows Terminal Preview
-- xterm, konsole, foot, xfce-terminal, contour
+> Write a Python command-line script with no external dependencies. The script should show the temperature forecast in Fahrenheit for 6:00am the next morning, and the percentage chance of rain. The only API you should use is wttr.in. Default location should be Lancaster, PA
+
+Errors? Feed the full error text back to the LLM (or a different one) and ask it to correct the program until it works
+
+---
+layout: center
+---
+
+[Humorous]{.biggie}
+
+<!--
+
+As can be seen in the interactive fiction I noted earlier, when most of the energy in a terminal user interface goes into the words, there is time and space for creative comedy. When the primary interface involves words, there will be plenty of opportunity to laugh at yourself.
+
+-->
+
+---
+
+# Oops. I typed `sl`
+
+<!-- <SlidevVideo v-click autoplay autoreset='click'>
+  <source src="/sl.webm" type="video/webm" />
+</SlidevVideo> -->
+
+![sl](/sl.gif)
+
+---
+layout: center
+---
+
+[Good-looking]{.biggie}
+
+---
+layout: image
+image: /asciiquarium.gif
+backgroundSize: contain
+---
+
+<!-- a very practical tool -->
 
 ---
 layout: image
@@ -420,9 +478,63 @@ image: /sixel.gif
 backgroundSize: contain
 ---
 
-Does your terminal support sixel?
+<!--
+Does your terminal support sixel? Some options:
+
+- WezTerm, Visual Studio Code
+- iTerm2
+- Windows Terminal Preview
+- xterm, konsole, foot, xfce-terminal, contour
+-->
 
 ---
+
+## figlet
+
+---
+
+<SlidevVideo v-click.hide autoplay autoreset='click'>
+  <source src="/pipes.webm" type="video/webm" />
+</SlidevVideo>
+
+<!--
+
+A note about pipes, which I used briefly with figlet. Not these pipes
+
+-->
+
+---
+
+## Pipes
+
+````md magic-move
+```sh
+article='https://en.wikipedia.org/w/api.php?format=json&action=query&prop=extracts&explaintext&titles=Computer_terminal'
+wget -O - "$article" | jq -r '.query.pages[].extract' | more
+```
+
+```ps1
+$article='https://en.wikipedia.org/w/api.php?format=json&action=query&prop=extracts&explaintext&titles=Computer_terminal'
+(Invoke-RestMethod -Uri $article).query.pages | Select-Object -ExpandProperty * | Select-Object -ExpandProperty extract
+```
+
+```ps1
+$article='https://en.wikipedia.org/w/api.php?format=json&action=query&prop=extracts&explaintext&titles=Computer_terminal'
+(irm $article).query.pages | select -Exp * | select -Exp extract
+```
+
+````
+
+---
+layout: image
+image: /termgl.gif
+backgroundSize: contain
+---
+
+<!-- This is TermGL, a c library for creating terminal animations -->
+
+---
+
 
 # Discussion
 

@@ -55,7 +55,7 @@
 #   Hide                            Hide the subsequent commands from the output
 #   Show                            Show the subsequent commands in the output
 
-Output asciiquarium.webm
+Output asciiquarium.gif
 
 Require asciiquarium
 
@@ -67,4 +67,4 @@ Sleep 2s
 
 Enter
 
-Sleep 10s
+Sleep 20s
