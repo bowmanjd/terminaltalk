@@ -22,6 +22,8 @@ hideInToc: true
 
 # Tools (and Toys) for the Terminal
 
+![Tools and Toys](/tools_toys.svg){style="margin: 0 auto"}
+
 ## The hospitality and playfulness of the console
 
 [terminal.bowmanjd.com](https://terminal.bowmanjd.com)
@@ -427,9 +429,9 @@ layout: center
 
 # Public Service Announcement 
 
-- slashes lean to the right
-- when in doubt, quote
-- your nemesis: spaces in directory and file names
+- slashes lean to the right: /
+- "when in doubt", 'quote'
+- FileNames and directory_names are better without spaces
 
 ---
 layout: image-right
@@ -651,6 +653,31 @@ A command-line tool for getting straightforward examples on how to use a command
 Also has a nice web interface at [tldr.inbrowser.app](https://tldr.inbrowser.app/)
 
 ---
+layout: image
+image: /tmux.png
+backgroundSize: contain
+---
+
+---
+
+## Multiplexers
+
+Like window managers for your terminal, no matter what terminal you are using. Multiple panes, windows, and can be themed.
+
+- tmux
+- zellij
+
+---
+
+## HTTP
+
+- wget
+- curl
+- Invoke-WebRequest (Powershell)
+- httpie (it's like Postman on the command line)
+- Invoke-RestMethod (might be the best reason to use Powershell)
+
+---
 
 ## qrencode
 
@@ -694,6 +721,17 @@ backgroundSize: contain
 - [Learn it in 60 seconds](https://commonmark.org/help/)
 
 <!-- I rarely use a word processor. This entire presentation was composed in Neovim using Markdown, and I find the tooling far more capable than Powerpoint. -->
+
+---
+layout: image-right
+image: /aider_goose.svg
+backgroundSize: contain
+---
+
+## LLMs in the terminal
+
+- [aider](https://aider.chat/)
+- [goose](https://block.github.io/goose/)
 
 ---
 layout: image-right
