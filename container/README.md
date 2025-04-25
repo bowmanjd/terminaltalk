@@ -65,9 +65,9 @@ To get around, try these commands:
 - `dust` shows filesystem utilization
 - `micro` is an easy-to-use editor
 - `vi` is a classic two-mode editor (":q enter" to quit)
-- `ffmpeg`
-- `fzf`
-- `imagemagick`
-- `miller`
+- `ffmpeg` edits and converts video files
+- `fzf` provides a fast way of search a list of files or other items
+- `imagemagick` converts and edits images
+- `comrak` converts Markdown to HTML
 
 Press "b" or space to move forward and backward through this introduction, or q to exit.

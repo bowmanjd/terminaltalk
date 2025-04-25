@@ -39,9 +39,10 @@ RUN apk add --no-cache \
 
 # Build using cargo
 WORKDIR /tmp
-RUN cargo install dotacat --version "0.3.0" --root /usr/local
+RUN cargo install dotacat --root /usr/local
 RUN cargo install tealdeer --root /usr/local
 RUN cargo install ttyper --root /usr/local
+RUN cargo install comrak --root /usr/local
 
 # Stage 3: Build Go tools
 FROM golang:alpine AS go-builder
@@ -64,6 +65,7 @@ COPY --from=c-builder /usr/local/bin/qrencode /usr/bin/
 COPY --from=rust-builder /usr/local/bin/dotacat /usr/bin/
 COPY --from=rust-builder /usr/local/bin/tldr /usr/bin/
 COPY --from=rust-builder /usr/local/bin/ttyper /usr/bin/
+COPY --from=rust-builder /usr/local/bin/comrak /usr/bin/
 
 # Copy artifacts from go builder stage
 COPY --from=go-builder /go/bin/glow /usr/bin/
@@ -88,7 +90,6 @@ RUN apk update && apk upgrade && \
     libpng \
     micro \
     micro-tetris \
-    miller \
     openssh-client \
     py3-rich \
     ripgrep \

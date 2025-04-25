@@ -609,6 +609,92 @@ backgroundSize: contain
 
 [Helpful]{.biggie}
 
+<!-- At the end of the day, I use the command-line because it provides efficient and enjoyable help for the things I am trying to do. And I can easily find help to figure out how to use the command-line tools I am learning. -->
+
+---
+layout: image-right
+image: /manual.svg
+backgroundSize: contain
+---
+
+## Getting help
+
+- `ffmpeg -h`
+- `qrencode --help`
+- `Set-Content -?`
+- `git help commit`
+- `Get-Help iwr`
+- `man magick`
+
+<!--
+
+A variety of ways to get help with a command, built into the command or the shell or the operating system.
+
+-->
+
+---
+
+# cheat.sh
+
+Obtain "cheatsheets" on the command-line using an CLI http client like `wget`, `curl`, or `Invoke-WebRequest`:
+
+`wget -qO - https://cheat.sh/magick`
+
+---
+
+## tldr.sh
+
+A command-line tool for getting straightforward examples on how to use a command:
+
+`tldr ffmpeg`
+
+Also has a nice web interface at [tldr.inbrowser.app](https://tldr.inbrowser.app/)
+
+---
+
+## qrencode
+
+`qrencode -o - -t ANSI256UTF8 https://cposc.org/`
+
+![cposc QR code](/cposc_qr.svg){style="height:20%"}
+
+---
+layout: image-right
+image: /imagemagick_ffmpeg.svg
+backgroundSize: contain
+---
+
+## Manipulating images and videos
+
+- `ffmpeg`
+- `magick`
+
+---
+layout: image-right
+image: /editors.svg
+backgroundSize: contain
+---
+
+## Editing files
+
+- [micro](https://micro-editor.github.io/index.html) is intuitive
+- [Neovim](https://neovim.io/) is old and hip
+- [Helix](https://helix-editor.com/) is "post-modern"
+
+---
+layout: image-left
+image: /markdown.svg
+backgroundSize: contain
+---
+
+## Markdown
+
+- Converts to html with tools like [comrak](https://github.com/kivikakk/comrak)
+- Open the html with your browser, save as pdf
+- [Learn it in 60 seconds](https://commonmark.org/help/)
+
+<!-- I rarely use a word processor. This entire presentation was composed in Neovim using Markdown, and I find the tooling far more capable than Powerpoint. -->
+
 ---
 layout: image-right
 image: /speech.svg
