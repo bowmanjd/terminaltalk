@@ -122,6 +122,10 @@ Let's do a little bit of word play. There is console the noun and console the ve
 -->
 
 ---
+layout: image-left
+image: /heart.svg
+backgroundSize: contain
+---
 
 The command line can be:
 
@@ -134,38 +138,35 @@ The command line can be:
 <!-- And now we are all wondering if the command line may in fact be a pleasant date. Indeed, my hope for you is that if you give it a chance you will find it downright companionable, a partner you would miss if you ever parted. -->
 
 ---
-layout: two-cols
+layout: image-left
+image: /terminal.svg
+backgroundSize: contain
 ---
 
-<!-- <div style="align-content: center"> -->
-![handheld game console](/gameboy.svg)
-
-::right::
-
-![terminal](/terminal.svg)
-
-<!--
-Yet another word association -- the command-line console can also be a bit of a game console.
--->
-
----
-
-# Pick your terminal (what you already have is good)
+# Pick your terminal
 
 - [WezTerm](https://wezterm.org/)
-- Mac: [iTerm2](https://iterm2.com/) or Terminal
+- Mac: [iTerm2](https://iterm2.com/), Terminal
 - Windows Terminal
-- Linux: [Konsole](https://konsole.kde.org/) or [Gnome Terminal](https://help.gnome.org/users/gnome-terminal/stable/) (I love [foot](https://codeberg.org/dnkl/foot))
+- Linux: [Konsole](https://konsole.kde.org/), [Gnome Terminal](https://help.gnome.org/users/gnome-terminal/stable/), [foot](https://codeberg.org/dnkl/foot)
 - ChromeOS: [enable Linux](https://chromeos.dev/en/productivity/terminal)
-- Also great: [Kitty](https://sw.kovidgoyal.net/kitty/), [Alacritty](https://alacritty.org/), [Ghostty](https://ghostty.org/)
+- [Kitty](https://sw.kovidgoyal.net/kitty/), [Alacritty](https://alacritty.org/), [Ghostty](https://ghostty.org/)
 - Android: [Termux](https://termux.dev)
-- iOS: [a-shell](https://apps.apple.com/us/app/a-shell/id1473805438) or [iSH](https://apps.apple.com/us/app/ish-shell/id1436902243) or use an SSH app (such as [Termius](https://www.apple.com/us/search/termius)) and connect to a server
+- iOS: [a-shell](https://apps.apple.com/us/app/a-shell/id1473805438), [iSH](https://apps.apple.com/us/app/ish-shell/id1436902243) or SSH client like [Termius](https://www.apple.com/us/search/termius)
 
 <!--
 
 A brief detour just to help us get started. First you need a terminal.
 
 -->
+
+---
+layout: image
+image: /package_manager.svg
+backgroundSize: contain
+---
+
+<!-- you will want something to install packages -->
 
 ---
 
@@ -183,14 +184,14 @@ Then we need an easy way to install toys. Depends on your operating system, but 
 -->
 
 ---
+layout: image-right
+image: /container.svg
+backgroundSize: 70%
+---
 
 # Containers
 
-- docker
-- podman
-- nerdctl
-
-All of these run a mini Linux OS (or many!) and typically a container provides one tool or service. You do not need these to be successful on the command-line, but it does open up the possibilities.
+docker, podman, nerdctl, etc... All of these run a mini Linux OS (or many!) and typically a container provides one tool or service. You do not need to use containers to be personally successful on the command-line, but it does open up possibilities.
 
 ---
 
@@ -208,12 +209,18 @@ I did create a container that goes along with this presentation and includes mos
 -->
 
 ---
-layout: center
+layout: image-right
+image: /gameboy.svg
+backgroundSize: contain
 ---
 
 **Fun**{.biggie}
 
-<!-- Let's dive into fun things to do in the terminal -->
+<!--
+Yet another word association -- the command-line console can also be a bit of a game console.
+
+Let's dive into fun things to do in the terminal
+-->
 
 ---
 
@@ -264,10 +271,13 @@ Typing tutors suit the terminal well. This one is called "ttyper".
 <!-- But don't be deceived, this is a contemporary genre as well, with new authors and competitions and festivals. One of my favorite interactive fiction pieces is fairly short -- you can likely finish it an hour or two, and it is called Gourmet. It is also an excellent example of interactive fiction that is not the old dungeons or fantasy style. It takes place in a restaurant. And the primary conflict revolves around a very troublesome lobster. -->
 
 ---
+layout: image-right
+image: /zork.jpeg
+backgroundSize: contain
+---
 
 # Interactive Fiction
 
-- You likely need a "Z-machine interpreter" like Frotz
 - [Beginner Resources](http://brasslantern.org/beginners/)
 - [The Interactive Fiction Community Forum](https://intfiction.org/)
 - [The Interactive Fiction Wiki](https://ifwiki.org/)
@@ -275,14 +285,22 @@ Typing tutors suit the terminal well. This one is called "ttyper".
 - [Planet Interactive Fiction](https://planet-if.com/)
 - [The Interactive Fiction Archive](https://www.ifarchive.org/)
 
+<!-- You will need a "Z-machine interpreter" like Frotz -->
+
 ---
-layout: center
+layout: image-left
+image: /palette.svg
+backgroundSize: contain
 ---
 
 **Personal**{.biggie}
 
 <!-- The console is personal -->
 
+---
+layout: image-right
+image: /open_source.svg
+backgroundSize: contain
 ---
 
 Command line applications are:
@@ -298,6 +316,10 @@ By personal, I mostly mean you can use terminal apps to make your environment wh
 
 -->
 
+---
+layout: image-left
+image: /bash.svg
+backgroundSize: contain
 ---
 
 # Shells
@@ -318,6 +340,10 @@ For instance, shells. These are the command interpreters. If you are starting ou
 -->
 
 ---
+layout: image-right
+image: /ohmyzsh.svg
+backgroundSize: contain
+---
 
 ## Theming your shell
 
@@ -326,14 +352,23 @@ For instance, shells. These are the command interpreters. If you are starting ou
 - [ohmyposh](https://ohmyposh.dev)
 
 ---
+layout: image
+image: /starship.svg
+backgroundSize: contain
+---
 
 ## Custom prompts
 
 - Every shell comes with its own means of customizing the command prompt
-- I like to use [starship](https://starship.rs/) on bash, zsh, Powershell...
+- I like to use [starship](https://starship.rs/)
+
 
 <!-- I deeply respect ohmyzsh and the like, but find my desires are met by using starship everywhere -->
 
+---
+layout: image-right
+image: /catppuccin.svg
+backgroundSize: contain
 ---
 
 ## Color themes
@@ -397,6 +432,10 @@ layout: center
 - your nemesis: spaces in directory and file names
 
 ---
+layout: image-right
+image: /handtools.svg
+backgroundSize: contain
+---
 
 ## Write your own tools
 
@@ -415,12 +454,16 @@ layout: center
 - Either built-in or as a library, your language of choice will also have a variety of easy ways to parse command-line parameters and config files.
  
 ---
+layout: image-left
+image: /lightbulb.svg
+backgroundSize: contain
+---
 
 ## Create tools even if you don't know how
 
-- Because of the simplicity and textual interface of CLI apps, LLMs can get it right most of the time
-- Use a language model known for good coding: Claude 3.5 or 3.7, Gemini 2.5 Pro, or OpenAI 4.1
-- Use a programming language in which LLMs excel: Python, for instance. But if you are already familiar with a language, use that one
+- CLI apps are textual, so LLMs often get it right
+- Current good coders: Claude 3.7 Sonnet, Gemini 2.5 Pro, OpenAI 4.1
+- LLMs favor Python. Or a language you know
 
 
 
@@ -437,7 +480,9 @@ text-based apps are great for LLMs and tool-calling, but LLMs also make great ap
 Errors? Feed the full error text back to the LLM (or a different one) and ask it to correct the program until it works
 
 ---
-layout: center
+layout: image-left
+image: /humor.svg
+backgroundSize: contain
 ---
 
 [Humorous]{.biggie}
@@ -459,7 +504,9 @@ As can be seen in the interactive fiction I noted earlier, when most of the ener
 ![sl](/sl.gif)
 
 ---
-layout: center
+layout: image-left
+image: /comb.svg
+backgroundSize: contain
 ---
 
 [Good-looking]{.biggie}
@@ -488,12 +535,26 @@ Does your terminal support sixel? Some options:
 -->
 
 ---
+layout: image
+image: /figlet.png
+backgroundSize: contain
+---
 
-## figlet
+<!--
+
+figlet generates ascii text banners
+
+-->
 
 ---
 
-<SlidevVideo v-click.hide autoplay autoreset='click'>
+<SlidevVideo v-click autoplay autoreset='click'>
+  <source src="/figlet.webm" type="video/webm" />
+</SlidevVideo>
+
+---
+
+<SlidevVideo v-click autoplay autoreset='click'>
   <source src="/pipes.webm" type="video/webm" />
 </SlidevVideo>
 
@@ -534,11 +595,29 @@ backgroundSize: contain
 <!-- This is TermGL, a c library for creating terminal animations -->
 
 ---
+layout: image
+image: /top_btm.png
+---
 
+<!-- On the right half is top, on the left is bottom. I find that there are good old tools that are useful workhorses, but there are often newer alternatives in which someone has put effort into improving interface and design. And adding colors and borders. -->
+
+---
+layout: image-left
+image: /help.svg
+backgroundSize: contain
+---
+
+[Helpful]{.biggie}
+
+---
+layout: image-right
+image: /speech.svg
+backgroundSize: contain
+---
 
 # Discussion
 
-- A command I really like is _____
-- Is there a command for this thing I want to do: __________?
+- A command I really like is ＿＿＿＿
+- Is there a command for this thing I want to do...?
 
 ---

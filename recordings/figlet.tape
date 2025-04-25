@@ -12,7 +12,7 @@ Type "figlet cposc"
 Sleep 1s
 Enter
 Sleep 4s
-Type "figlet -f smslant Welcome to CPOSC"
+Type "figlet -f smslant Welcome to CPOSC | dotacat"
 Sleep 1s
 Enter
 Sleep 5s

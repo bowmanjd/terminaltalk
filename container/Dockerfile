@@ -24,9 +24,9 @@ RUN git clone https://github.com/fukuchi/libqrencode.git && \
     make install
 
 # build bocfel
-RUN git clone https://github.com/townba/bocfel && \
-    cd bocfel && \
-    make GLK=
+# RUN git clone https://github.com/townba/bocfel && \
+#     cd bocfel && \
+#     make GLK=
 
 # Stage 2: Build dotacat from source
 FROM rust:alpine AS rust-builder
@@ -58,7 +58,7 @@ FROM alpine:edge
 
 # Copy artifacts from c-builder stage
 COPY --from=c-builder /usr/local/bin/qrencode /usr/bin/
-COPY --from=c-builder /tmp/bocfel/bocfel /usr/bin/
+# COPY --from=c-builder /tmp/bocfel/bocfel /usr/bin/
 
 # Copy artifacts from rust builder stage
 COPY --from=rust-builder /usr/local/bin/dotacat /usr/bin/
@@ -93,10 +93,13 @@ RUN apk update && apk upgrade && \
     py3-rich \
     ripgrep \
     sl \
+    sudo \
     tty-solitaire \
     zoxide && \
     addgroup -S cposc && adduser -S -G cposc cposc && \
     mkdir -p /home/cposc/.ssh && \
+    echo "cposc ALL=(ALL) NOPASSWD: ALL" > /etc/sudoers.d/cposc && \
+    chmod 0440 /etc/sudoers.d/cposc && \
     wget -O /home/cposc/zork1.z3 https://eblong.com/infocom/gamefiles/zork1-r119-s880429.z3 && \
     wget -O /home/cposc/gourmet.zblorb https://ifarchive.org/if-archive/games/zcode/gourmet.zblorb && \
     echo '[telehack.com]:2222 ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIMYDtEuPGGD6Rj+MKP8dHmBS9NaFkq7IXRSuZqsQp6eO' > /home/cposc/.ssh/known_hosts && \
