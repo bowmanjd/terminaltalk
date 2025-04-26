@@ -41,7 +41,7 @@ hideInToc: true
 
 ![qr code for terminal.bowmanjd.com](/qrcode.svg)
 
-# [terminal.bowmanjd.com](https://terminal.bowmanjd.com)
+## [terminal.bowmanjd.com](https://terminal.bowmanjd.com)
 
 ::right::
 
@@ -146,7 +146,7 @@ image: /terminal.svg
 backgroundSize: contain
 ---
 
-# Pick your terminal
+## Pick your terminal
 
 - [WezTerm](https://wezterm.org/) or [VSCode](https://code.visualstudio.com/)
 - Mac: [iTerm2](https://iterm2.com/), Terminal
@@ -173,7 +173,7 @@ backgroundSize: contain
 
 ---
 
-# Choose your package manager(s)
+## Choose your package manager(s)
 
 - Mac: [brew.sh](https://brew.sh) then `brew install qrencode`
 - Windows: [scoop.sh](https://scoop.sh) then `scoop install qrencode` ([chocolatey](https://chocolatey.org/) or [winget](https://learn.microsoft.com/en-us/windows/package-manager/) may also have the desired tools and toys)
@@ -192,13 +192,18 @@ image: /container.svg
 backgroundSize: 70%
 ---
 
-# Containers
+## Containers
 
-docker, podman, nerdctl, etc... All of these run a mini Linux OS (or many!) and typically a single container provides one tool or service. You do not need to use containers to be personally successful on the command-line, but it does open up possibilities.
+docker, podman, nerdctl, etc... Usually provide a single command or service. Browse containers at:
+
+- [hub.docker.com](https://hub.docker.com/)
+- [GitHub](https://github.com/search?type=registrypackages)
+
+<!-- All of these run a mini Linux OS (or many!) and typically a single container provides one tool or service. You do not need to use containers to be personally successful on the command-line, but it does open up possibilities. -->
 
 ---
 
-# Companion container
+## Companion container
 
 `docker run -it ghcr.io/bowmanjd/alpine-cposc`
 
@@ -260,7 +265,7 @@ Typing tutors suit the terminal well. This one is called "ttyper".
 layout: fact
 ---
 
-# Telehack
+## Telehack
 
 - `ssh -p 2222 guest@telehack.com`
 
@@ -290,7 +295,7 @@ image: /zork.jpeg
 backgroundSize: contain
 ---
 
-# Interactive Fiction
+## Interactive Fiction
 
 - [Beginner Resources](http://brasslantern.org/beginners/)
 - [The Interactive Fiction Community Forum](https://intfiction.org/)
@@ -336,7 +341,7 @@ image: /bash.svg
 backgroundSize: contain
 ---
 
-# Shells
+## Shells
 
 - bash
 - zsh
@@ -463,7 +468,7 @@ No need to overthink it; find a simple way that works for you.
 layout: center
 ---
 
-# Public Service Announcement 
+## Public Service Announcement 
 
 - slashes lean to the right: /
 - "when in doubt", 'quote'
@@ -514,7 +519,7 @@ text-based apps are great for LLMs and tool-calling, but LLMs also make great ap
 
 ---
 
-# An example single-shot prompt
+## An example single-shot prompt
 
 > Write a Python command-line script with no external dependencies. The script should show the temperature forecast in Fahrenheit for 6:00am the next morning, and the percentage chance of rain. The only API you should use is wttr.in. Default location should be Lancaster, PA
 
@@ -536,7 +541,7 @@ As can be seen in the interactive fiction I noted earlier, when most of the ener
 
 ---
 
-# Oops. I typed `sl`
+## Oops. I typed `sl`
 
 <!-- <SlidevVideo v-click autoplay autoreset='click'>
   <source src="/sl.webm" type="video/webm" />
@@ -563,6 +568,17 @@ backgroundSize: contain
 ---
 
 <!-- asciiquarium is a very practical tool. For half of my family, this was their favorite slide in the deck. You will notice that ascii art is a common theme in the terminal -->
+
+---
+
+## Weather from wttr.in
+
+Try one of these! (replace 17603 with your zip code of choice)
+
+- `curl wttr.in/17603`
+- `wget -qO - wttr.in/17603`
+- `(iwr wttr.in/17603).Content` (Powershell)
+- (or just go to wttr.in/17603 in your browser)
 
 ---
 layout: image
@@ -677,7 +693,7 @@ A variety of ways to get help with a command, built into the command or the shel
 
 ---
 
-# cheat.sh
+## cheat.sh
 
 Obtain "cheatsheets" on the command-line using an CLI http client like `wget`, `curl`, or `Invoke-WebRequest`:
 
@@ -731,6 +747,16 @@ Like window managers for your terminal, no matter what terminal you are using. M
 ![cposc QR code](/cposc_qr.svg){style="height:20%"}
 
 <!-- qrencode is useful for presentations like this, or when I want an easy way to get text or URL from my computer screen to my phone, or to a friend's phone. -->
+
+---
+layout: image-left
+image: /dependency.png
+backgroundSize: contain
+---
+
+[xkcd.com/2347](https://xkcd.com/2347/)
+
+Someday ImageMagick will finally break for good and we'll have a long period of scrambling as we try to reassemble civilization from the rubble.
 
 ---
 layout: image-right
@@ -811,7 +837,7 @@ backgroundSize: contain
 
 ---
 layout: image
-image: thanks.png
+image: /thanks.png
 backgroundSize: contain
 ---
 
@@ -821,7 +847,7 @@ image: /speech.svg
 backgroundSize: contain
 ---
 
-# Discussion
+## Discussion
 
 - A command I really like is ＿＿＿＿
 - Is there a command for this thing I want to do...?
