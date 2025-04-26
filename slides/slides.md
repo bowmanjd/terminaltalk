@@ -29,9 +29,9 @@ hideInToc: true
 [terminal.bowmanjd.com](https://terminal.bowmanjd.com)
 
 <!--
-It is an honor to be here. I am Jonathan Bowman. I am a hobbyist developer. I have been a teacher, preacher, web developer, IT director, software project manager, and now I write SQL, Javascript, and C# all day at Cargas. Cargas is the most humane and thoughtful place I have ever worked with technology, and I am proud to be there. There are other things I am proud of. I use Vim, I like Linux, I am pretty good with Python and bash and Powershell, and even a little Rust.
+It is an honor to be here. I am Jonathan Bowman. I am a hobbyist developer. I have been a teacher, preacher, web developer, IT director, software project manager, and now I write SQL, Javascript, and C# all day at Cargas. Cargas is the most humane and thoughtful place I have ever worked with technology, and I am proud to be there. I use Vim, I like Linux, I am pretty good with Python and bash and Powershell, and even a little Rust. I have a pretty cool family, though they have varying levels of comfort on the command-line.
 
-Whether Linux, Windows, or Mac, or BSD, I do feel pretty comfortable on the command-line. And I hope that this time together today might encourage you to be a bit more comfortable on the command line, and find ways it can support, or entertain, you.
+I do feel pretty comfortable on the command-line. And I hope that this time together today might encourage you to be a bit more comfortable on the command line, and find ways it can support, or entertain, you.
 -->
 
 ---
@@ -65,7 +65,7 @@ This is the link to this slide deck as well as a few links my online presences. 
 
 <!--
 
-The stereotype of the command-line is that it is inhospitable
+You might call it the terminal, the command-line, the shell... While there are subtle differences, we will use them mostly interchangeably today. I have to admit that the stereotype of the console-based tools are that they are confusing and inhospitable
 
 -->
 
@@ -79,7 +79,8 @@ backgroundSize: contain
 
 <!--
 
-- console and console (v) come from the same root in French, so console (n) is something that alleviates the load (wiktionary)
+- While the console might be intimidating, we do appreciate being **consoled** don't we?
+- console and console (v) come from the same root in French, in fact console (n) originally meant something that alleviates the load (wiktionary)
 - Here is a console bracket, designed to alleviate the load
 
 -->
@@ -131,13 +132,13 @@ backgroundSize: contain
 
 The command line can be:
 
-- fun
-- personal
-- humorous
-- good-looking
-- helpful
+- Fun
+- Personal
+- Humorous
+- Good-looking
+- Helpful
 
-<!-- And now we are all wondering if the command line may in fact be a pleasant date. Indeed, my hope for you is that if you give it a chance you will find it downright companionable, a partner you would miss if you ever parted. -->
+<!-- And now we are all wondering if the command line may in fact be a pleasant date. Indeed, my hope for you is that if you give it a chance you will find it downright companionable, a friend you'd like to meet -->
 
 ---
 layout: image-left
@@ -147,7 +148,7 @@ backgroundSize: contain
 
 # Pick your terminal
 
-- [WezTerm](https://wezterm.org/)
+- [WezTerm](https://wezterm.org/) or [VSCode](https://code.visualstudio.com/)
 - Mac: [iTerm2](https://iterm2.com/), Terminal
 - Windows Terminal
 - Linux: [Konsole](https://konsole.kde.org/), [Gnome Terminal](https://help.gnome.org/users/gnome-terminal/stable/), [foot](https://codeberg.org/dnkl/foot)
@@ -158,7 +159,7 @@ backgroundSize: contain
 
 <!--
 
-A brief detour just to help us get started. First you need a terminal.
+A brief detour just to help us get started. First you need a terminal. Use the one you are with. Or, on Windows... Mac... Linux... Wezterm is pretty cool if you want to download one.
 
 -->
 
@@ -193,7 +194,7 @@ backgroundSize: 70%
 
 # Containers
 
-docker, podman, nerdctl, etc... All of these run a mini Linux OS (or many!) and typically a container provides one tool or service. You do not need to use containers to be personally successful on the command-line, but it does open up possibilities.
+docker, podman, nerdctl, etc... All of these run a mini Linux OS (or many!) and typically a single container provides one tool or service. You do not need to use containers to be personally successful on the command-line, but it does open up possibilities.
 
 ---
 
@@ -201,12 +202,15 @@ docker, podman, nerdctl, etc... All of these run a mini Linux OS (or many!) and 
 
 `docker run -it ghcr.io/bowmanjd/alpine-cposc`
 
-- Linux: install podman or docker with your package manager
-- Mac or Windows: [Rancher Desktop](https://rancherdesktop.io/) or [Podman](https://podman.io/docs/installation)
+Mac or Windows: [Rancher Desktop](https://rancherdesktop.io/) or [Podman](https://podman.io/docs/installation)
+
+![Podman Desktop and Rancher Desktop](/podman_rancher_desktop.svg)
 
 <!--
 
-I did create a container that goes along with this presentation and includes most of the tools and games I mention here. Feel free to use it. If you are using podman, just use that in place of the word docker in this command.
+I did create a container that goes along with this presentation and includes most of the tools and games I mention here. Feel free to use it. If you are using podman, just use that in place of the word docker in this command. 
+
+On Linux: install podman or docker with your package manager. On Windows or Mac...
 
 -->
 
@@ -253,12 +257,20 @@ Typing tutors suit the terminal well. This one is called "ttyper".
 <!-- Solitaire! I will admit I am not yet convinced this is a perfect fit for the terminal. Honestly, using a physical card deck might appeal to me more. -->
 
 ---
+layout: fact
+---
+
+# Telehack
+
+- `ssh -p 2222 guest@telehack.com`
+
+---
 
 <SlidevVideo v-click autoplay autoreset='click'>
   <source src="/adventure.webm" type="video/webm" />
 </SlidevVideo>
 
-<!-- One type of game I love playing in the terminal is what used to be called text adventure games, and are now more often called interactive fiction. Here is the first one, created around 1975. You can play it today, still, and it is worth a few hours of fun, at least. -->
+<!-- I hope you will permit me to geek out a bit over one of my interests. One type of game I love playing in the terminal is what used to be called text adventure games, and are now more often called interactive fiction. Here is the first one, Adventure, created around 1975. You can play it today, still, and it is worth a few hours of fun, at least. -->
 
 ---
 
@@ -287,7 +299,7 @@ backgroundSize: contain
 - [Planet Interactive Fiction](https://planet-if.com/)
 - [The Interactive Fiction Archive](https://www.ifarchive.org/)
 
-<!-- You will need a "Z-machine interpreter" like Frotz -->
+<!-- To play many pieces of interactive fiction, you will need a "Z-machine interpreter" like Frotz. I included many links here should you want to get to know the genre. -->
 
 ---
 layout: image-left
@@ -297,7 +309,7 @@ backgroundSize: contain
 
 **Personal**{.biggie}
 
-<!-- The console is personal -->
+<!-- In addition to being fun, the console is also personal -->
 
 ---
 layout: image-right
@@ -337,7 +349,7 @@ backgroundSize: contain
 
 <!--
 
-For instance, shells. These are the command interpreters. If you are starting out, I'd advise that you stick with Powershell on Windows, Bash on Linux, and Zsh on Mac. In other words, don't worry about it and use what is there. But you can certainly use any of those three on any operating system. Or you can be hip and use fish.
+For instance, shells. A shell is simply a command interpreter. If you are starting out, I'd advise that you stick with Powershell on Windows, Bash on Linux, and Zsh on Mac. In other words, don't worry about it and use what is there. But you can certainly use any of those three on any operating system. Or you can be hip and use fish. Or something more interesting.
 
 -->
 
@@ -353,6 +365,8 @@ backgroundSize: contain
 - [ohmybash](https://ohmybash.nntoan.com/)
 - [ohmyposh](https://ohmyposh.dev)
 
+<!-- I just wanted to give some applause to ohmyzsh, which some years ago popularized theming your terminal and your prompt in particular. It was followed by similar endeavors for bash and Powershell. One of these may well suit your fancy as you personal your terminal -->
+
 ---
 layout: image
 image: /starship.svg
@@ -361,7 +375,7 @@ backgroundSize: contain
 
 ## Custom prompts
 
-- Every shell comes with its own means of customizing the command prompt
+- Every shell already comes with its own means of customizing the command prompt
 - I like to use [starship](https://starship.rs/)
 
 
@@ -385,6 +399,8 @@ backgroundSize: contain
 - [Tokyo Night](https://github.com/tokyo-night/tokyo-night-vscode-theme)
 - [gruvbox](https://github.com/morhetz/gruvbox)
 
+<!-- speaking of themes, there are many to choose from. You can theme your terminal, theme various terminal apps. Maybe even switch your theme every few months or years. -->
+
 ---
 
 ## Modernize/Customize/Personalize the tools themselves
@@ -393,13 +409,13 @@ backgroundSize: contain
 - `ls` ⇢ `eza` (**l**ist a directory)
 - `cd` ⇢ `z` from zoxide (**c**hange **d**irectory)
 - `cat` ⇢ `bat` (output and/or con**cat**enate files)
+- `exit` does what it says (also try `ctrl-d`)
 - `find` ⇢ `fd` (search for filenames)
 - `grep` ⇢ `rg` (ripgrep; search for content within files)
-- `exit` does what it says (also try `ctrl-d`)
 
 <!--
 
-Now let's talk personalization as well as basic commands. A brief review of the essential commands: (read first 4). These work on bash, zsh and Powershell.
+Let's introduce a few basic commands and discuss how even they can be personalized. (read first 4). These work on bash, zsh and Powershell.
 
 These are old standbys, but there are modern alternatives you may want to experiment with, because of added functionality or just because they look prettier. eza, for instance, will put pretty icons in your directory listings. bat will color-code (that is, syntax highlight) and line number your output. zoxide is a little new for me, but has already replaced my cd command and allows me to navigate directories so much faster, because it remembers where I have been, and makes it easy to return to directories I use the most. fd and ripgrep are essential to me because they are cross-platform and uniform, and fast and feature-full.
 
@@ -424,6 +440,26 @@ This brings us to aliasing. eza, for instance, can serve well as a drop-in repla
 -->
 
 ---
+layout: image-right
+image: /chezmoi.svg
+backgroundSize: contain
+---
+
+## "Dotfiles"
+
+Configuration files that pre-configure your command-line (and gui) apps are sometimes called dotfiles.
+
+[bowmanjd.com/dotfiles/](https://www.bowmanjd.com/dotfiles/).
+
+Or consider [chezmoi](https://www.chezmoi.io/)
+
+<!-- 
+Many command-line tools can be configured not only with command-line parameters, but with configuration files. These configuration files have historically been prefixed with a "." so they are sometimes called dotfiles. And you can store all of them in version control (such as a version control system like `git`).
+I fell down the rabbit hole a couple years ago and wrote a blog series at [bowmanjd.com/dotfiles/](https://www.bowmanjd.com/dotfiles/).
+No need to overthink it; find a simple way that works for you.
+-->
+
+---
 layout: center
 ---
 
@@ -432,6 +468,7 @@ layout: center
 - slashes lean to the right: /
 - "when in doubt", 'quote'
 - FileNames and directory_names are better without spaces
+- Type as little as possible. Tab completion is your friend.
 
 ---
 layout: image-right
@@ -444,6 +481,8 @@ backgroundSize: contain
 - a script is simply putting multiple commands in file and running it
 - learn a new programming language by writing a command-line tool
 
+<!-- The ultimate in personalization is writing your own stuff -->
+
 ---
 
 ## Robust libraries
@@ -454,6 +493,8 @@ backgroundSize: contain
 - Rust: [ratatui](https://ratatui.rs/) or [iocraft](https://github.com/ccbrown/iocraft)
 - .NET: [Spectre.Console](https://spectreconsole.net/) or [Terminal.Gui](https://github.com/gui-cs/Terminal.Gui)
 - Either built-in or as a library, your language of choice will also have a variety of easy ways to parse command-line parameters and config files.
+
+<!-- Learning a programming language or framework with a terminal app as your goal can be very satisfying, due to its straightforward simplicity.  Here are some suggested frameworks. -->
  
 ---
 layout: image-left
@@ -466,8 +507,6 @@ backgroundSize: contain
 - CLI apps are textual, so LLMs often get it right
 - Current good coders: Claude 3.7 Sonnet, Gemini 2.5 Pro, OpenAI 4.1
 - LLMs favor Python. Or a language you know
-
-
 
 <!--
 text-based apps are great for LLMs and tool-calling, but LLMs also make great apps.
@@ -505,6 +544,8 @@ As can be seen in the interactive fiction I noted earlier, when most of the ener
 
 ![sl](/sl.gif)
 
+<!-- one person grew so frustrated with their own mistyping of the common command "ls" that they wrote a program called "sl" which of course stands for steam locomotive. If you install it, you will be rewarded every time you get ls backwards. -->
+
 ---
 layout: image-left
 image: /comb.svg
@@ -513,13 +554,15 @@ backgroundSize: contain
 
 [Good-looking]{.biggie}
 
+<!-- contrary to the sterotypes, terminals can be beautiful -->
+
 ---
 layout: image
 image: /asciiquarium.gif
 backgroundSize: contain
 ---
 
-<!-- a very practical tool -->
+<!-- asciiquarium is a very practical tool. For half of my family, this was their favorite slide in the deck. You will notice that ascii art is a common theme in the terminal -->
 
 ---
 layout: image
@@ -528,12 +571,8 @@ backgroundSize: contain
 ---
 
 <!--
-Does your terminal support sixel? Some options:
+But modern terminals can also support graphics. Does your terminal support sixel? Some options: WezTerm, Visual Studio Code, iTerm2, Windows Terminal Preview, xterm, konsole, foot, xfce-terminal, contour.
 
-- WezTerm, Visual Studio Code
-- iTerm2
-- Windows Terminal Preview
-- xterm, konsole, foot, xfce-terminal, contour
 -->
 
 ---
@@ -553,6 +592,8 @@ figlet generates ascii text banners
 <SlidevVideo v-click autoplay autoreset='click'>
   <source src="/figlet.webm" type="video/webm" />
 </SlidevVideo>
+
+<!-- figlet has a variety of fonts, and you can install more. You can pair it with other tools to add a splash of color -->
 
 ---
 
@@ -594,7 +635,7 @@ image: /termgl.gif
 backgroundSize: contain
 ---
 
-<!-- This is TermGL, a c library for creating terminal animations -->
+<!-- This is TermGL, a c library for creating terminal animations. There are other similar libraries if that is your interest. -->
 
 ---
 layout: image
@@ -667,6 +708,8 @@ Like window managers for your terminal, no matter what terminal you are using. M
 - tmux
 - zellij
 
+<!-- tmux you saw on the previous page, and is what I have been using for years. zellij is the new hotness, and I am currently planning the plan to switch -->
+
 ---
 
 ## HTTP
@@ -677,6 +720,8 @@ Like window managers for your terminal, no matter what terminal you are using. M
 - httpie (it's like Postman on the command line)
 - Invoke-RestMethod (might be the best reason to use Powershell)
 
+<!-- I just wanted to throw some tools at you that I enjoy, in case you might find them helfpul -->
+
 ---
 
 ## qrencode
@@ -684,6 +729,8 @@ Like window managers for your terminal, no matter what terminal you are using. M
 `qrencode -o - -t ANSI256UTF8 https://cposc.org/`
 
 ![cposc QR code](/cposc_qr.svg){style="height:20%"}
+
+<!-- qrencode is useful for presentations like this, or when I want an easy way to get text or URL from my computer screen to my phone, or to a friend's phone. -->
 
 ---
 layout: image-right
@@ -694,7 +741,10 @@ backgroundSize: contain
 ## Manipulating images and videos
 
 - `ffmpeg`
-- `magick`
+- `magick` (ImageMagick)
+
+<!-- So much of our world involves transcoding video from one format to another, or converting images from one format to another. The workhorses behind most of those endeavors are the command-line video editor ffmpeg and the image manipulation tool ImageMagick. Randall Monroe of XKCD believes ImageMagick is one of those foundation projects that holds up the universe. He wrote "Someday ImageMagick will finally break for good and we'll have a long period of scrambling as we try to reassemble civilization from the rubble." But it is working fine. Want to create animated gifs, or shorten or crop a video? These are your friends. They are also rather complex beasts. Use cheatsheets or LLMs to help you.
+-->
 
 ---
 layout: image-right
@@ -708,6 +758,10 @@ backgroundSize: contain
 - [Neovim](https://neovim.io/) is old and hip
 - [Helix](https://helix-editor.com/) is "post-modern"
 
+<!--
+Editing files in the terminal might be something you _have_ to do, or it might be something you _want_ to do. Whichever fits you, there is an editor for that. Micro works like you expect. The others do not, but they are amazing.
+-->
+
 ---
 layout: image-left
 image: /markdown.svg
@@ -720,7 +774,21 @@ backgroundSize: contain
 - Open the html with your browser, save as pdf
 - [Learn it in 60 seconds](https://commonmark.org/help/)
 
-<!-- I rarely use a word processor. This entire presentation was composed in Neovim using Markdown, and I find the tooling far more capable than Powerpoint. -->
+<!-- I rarely use a word processor. This entire presentation was composed in Neovim using Markdown, and I find the tooling far more capable than Powerpoint.  (read points) -->
+
+---
+layout: image-left
+image: /ollama.svg
+backgroundSize: contain
+---
+
+## Host your own LLM with [ollama](https://ollama.com/)
+
+- `ollama run gemma3:4b`
+- or other model from [ollama.com/models](https://ollama.com/models)
+- or GGUF models from [huggingface](https://huggingface.co/models?library=gguf)
+
+<!-- Yes, the command-line is great for chatting with and using Language Models and associated tools. -->
 
 ---
 layout: image-right
@@ -728,10 +796,24 @@ image: /aider_goose.svg
 backgroundSize: contain
 ---
 
-## LLMs in the terminal
+## Access LLMs in the terminal
 
 - [aider](https://aider.chat/)
 - [goose](https://block.github.io/goose/)
+
+---
+
+<SlidevVideo v-click autoplay autoreset='click'>
+  <source src="/aider.webm" type="video/webm" />
+</SlidevVideo>
+
+<!-- I will admit I am quite taken with aider. It works with any editor, any IDE. You can actually put comments in something you are editing, and say things like "explain this function" or "explain this paragraph" or even "write documentation for this function" or "fix the error in this line" and it will, and then erase your comment, while making it simple to revert the change if you don't like it. -->
+
+---
+layout: image
+image: thanks.png
+backgroundSize: contain
+---
 
 ---
 layout: image-right
@@ -744,4 +826,3 @@ backgroundSize: contain
 - A command I really like is ＿＿＿＿
 - Is there a command for this thing I want to do...?
 
----
