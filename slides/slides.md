@@ -41,7 +41,7 @@ hideInToc: true
 
 ![qr code for terminal.bowmanjd.com](/qrcode.svg)
 
-## [terminal.bowmanjd.com](https://terminal.bowmanjd.com)
+[terminal.bowmanjd.com](https://terminal.bowmanjd.com)
 
 ::right::
 
@@ -267,7 +267,7 @@ layout: fact
 
 ## Telehack
 
-- `ssh -p 2222 guest@telehack.com`
+`ssh -p 2222 guest@telehack.com`
 
 ---
 

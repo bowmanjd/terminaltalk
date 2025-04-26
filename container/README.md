@@ -24,8 +24,8 @@ To get around, try these commands:
 (Usually q or ctrl-c will exit)
 
 - `tetris`
-- `bocfel /root/gourmet.zblorb`
-- `bocfel /root/zork.z3`
+- `frotz gourmet.zblorb`
+- `frotz zork.z3`
 - `ttyper`
 - `ttysolitaire -no-background-color`
 
@@ -66,8 +66,13 @@ To get around, try these commands:
 - `micro` is an easy-to-use editor
 - `vi` is a classic two-mode editor (":q enter" to quit)
 - `ffmpeg` edits and converts video files
-- `fzf` provides a fast way of search a list of files or other items
 - `imagemagick` converts and edits images
 - `comrak` converts Markdown to HTML
+
+To upgrade packages or install new packages, try:
+
+- `sudo apk -U upgrade`
+- `sudo apk search packagename`
+- `sudo apk add packagename`
 
 Press "b" or space to move forward and backward through this introduction, or q to exit.

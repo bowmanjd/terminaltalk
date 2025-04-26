@@ -77,6 +77,7 @@ RUN apk update && apk upgrade && \
     bat \
     bottom \
     bsd-games \
+    curl \
     dust \
     eza \
     fastfetch \
